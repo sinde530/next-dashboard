@@ -3,6 +3,7 @@ import {
   MdAttachMoney,
   MdDashboard,
   MdHelpCenter,
+  MdLogout,
   MdOutlineSettings,
   MdPeople,
   MdShoppingBag,
@@ -101,6 +102,13 @@ export default function Sidebar() {
           </li>
         ))}
       </ul>
+
+      <form>
+        <button className="flex p-4 items-center gap-[10px] my-1 rounded-xl hover:bg-[#2E374A] w-full">
+          <MdLogout />
+          Logout
+        </button>
+      </form>
     </div>
   );
 }
