@@ -1,6 +1,9 @@
+'use client';
+
 import Search from '@/app/ui/dashboard/search';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const products = [
   {
@@ -33,10 +36,20 @@ const products = [
 ];
 
 export default function Products() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredUsers, setFilteredUsers] = useState(products);
+
+  useEffect(() => {
+    const results = products.filter((products) =>
+      products.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredUsers(results);
+  }, [searchTerm]);
+
   return (
     <div className="bg-[--bgSoft] p-5 rounded-[10px] mt-5">
       <div className="flex items-center justify-between">
-        <Search placeholder="Search for a product..." />
+        <Search placeholder="Search for a product..." onSearch={setSearchTerm} />
         <Link href="/dashboard/products/add">
           <button className="p-[10px] bg-[#5D57C9] text-[--text] border-none rounded-[5px] cursor-pointer">
             Add New
@@ -55,7 +68,7 @@ export default function Products() {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => (
+          {filteredUsers.map((product) => (
             <tr key={product.id}>
               <td className="p-[10px]">
                 <div className="flex items-center gap-[10px]">
