@@ -7,11 +7,11 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
-      <div>
+    <div className="flex w-full">
+      <div className="w-1/4 bg-[--bgSoft] p-5 min-h-screen">
         <Sidebar />
       </div>
-      <div>
+      <div className="w-3/4 p-5">
         <Navbar />
         {children}
       </div>
