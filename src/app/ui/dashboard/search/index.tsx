@@ -1,3 +1,5 @@
+'use client';
+
 import { MdSearch } from 'react-icons/md';
 
 export default function Search({ placeholder, onSearch }: any) {
