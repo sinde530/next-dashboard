@@ -1,4 +1,5 @@
 import Card from '../ui/dashboard/card';
+import Chart from '../ui/dashboard/chart';
 import Transactions from '../ui/dashboard/transactions';
 
 // DUMMY DATA
@@ -26,13 +27,15 @@ const cards = [
 export default function DashBoard() {
   return (
     <div className="flex gap-5 mt-5">
-      <div className="w-3/4 flex flex-col gap-5">
+      {/* <div className="w-3/4 flex flex-col gap-5"> */}
+      <div className="w-full flex flex-col gap-5">
         <div className="flex gap-5 justify-between">
           {cards.map((item: any) => (
             <Card item={item} key={item.id} />
           ))}
         </div>
         <Transactions />
+        <Chart />
       </div>
     </div>
   );
