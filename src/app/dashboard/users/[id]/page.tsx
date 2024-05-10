@@ -7,7 +7,7 @@ export default async function UserDataView({ params }: any) {
   const notfundImage = 'https://docs.nestjs.com/assets/logo-small-gradient.svg';
 
   return (
-    <div className="flex gap-[50px] mt-5">
+    <div className="flex gap-[20px] mt-5">
       <div className="w-1/4 bg-[--bgSoft] p-5 rounded-[10px] font-bold text-[--textSoft] max-h-max">
         <div className="w-full h-[300px] relative rounded-[10px] overflow-hidden mb-5">
           <Image src={user.img || notfundImage} alt="" fill />
