@@ -15,8 +15,7 @@ import Image from 'next/image';
 
 export default function Sidebar() {
   const image = 'https://docs.nestjs.com/assets/logo-small-gradient.svg';
-  // const image =
-  //   'https://mml.pstatic.net/www/mobile/edit/20240507_1095/upload_1715044214109txxgd.gif';
+
   const menuItems = [
     {
       title: 'Pages',
